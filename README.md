@@ -1,4 +1,4 @@
-Learning Bayesian networks from ordinal data
+Learning Bayesian networks from ordinal data 
 
 Being Bayesian about learning Bayesian networks from ordinal data
 

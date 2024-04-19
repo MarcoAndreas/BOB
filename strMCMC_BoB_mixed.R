@@ -905,7 +905,7 @@ return(W)
   
   ################################################################################
   ### assign the topological order of the descendants of the child
-  des_top_order <- function(incidence, ancest1,child,){
+  des_top_order <- function(incidence, ancest1,child){
     n <- nrow(incidence)	  
     top <- top_order(incidence)
     position_child <- which(top==child)

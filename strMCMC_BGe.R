@@ -145,7 +145,7 @@ strMCMC_BGe <- function(data,iterations,thin_factor){
   ancestor_new <- ancest1
   if (operation==1){
     ancestor_new[c(child,which(ancest1[,child]==1)),] <- 0           # delete all ancestors of the child and its descendants                                           #
-    top_name <- des_top_order(incidence_new, ancest1, child, n)
+    top_name <- des_top_order(incidence_new, ancest1, child)
     for (d in top_name){
       for(g in which(incidence_new[,d]==1)) {
         ancestor_new[d,c(g,(which(ancestor_new[g,]==1)))] <- 1
@@ -160,7 +160,7 @@ strMCMC_BGe <- function(data,iterations,thin_factor){
   ### updating the ancestor matrix (after edge deletion)
   if (random <= num_deletion){
     ancestor_new[c(child,which(ancest1[,child]==1)),] <- 0           # delete all ancestors of the child and its descendants                                           #
-    top_name <- des_top_order(incidence_new, ancest1, child,n)
+    top_name <- des_top_order(incidence_new, ancest1, child)
     for (d in top_name){
       for(g in which(incidence_new[,d]==1)) {
         ancestor_new[d,c(g,(which(ancestor_new[g,]==1)))] <- 1
@@ -335,7 +335,7 @@ strMCMC_BGe <- function(data,iterations,thin_factor){
       if (operation==1){
         ancestor_new[c(child,which(ancest1[,child]==1)),] <- 0   # delete all ancestors of the child and its descendants                                           #
         
-        top_name <- des_top_order(incidence_new, ancest1, child, n)
+        top_name <- des_top_order(incidence_new, ancest1, child)
         for (d in top_name){
           for(g in which(incidence_new[,d]==1)) {
             ancestor_new[d,c(g,(which(ancestor_new[g,]==1)))] <- 1
@@ -350,7 +350,7 @@ strMCMC_BGe <- function(data,iterations,thin_factor){
       ### updating the ancestor matrix (after edge deletion)
       if (random <= num_deletion){
         ancestor_new[c(child,which(ancest1[,child]==1)),] <- 0   # delete all ancestors of the child and its descendants                                           #
-        top_name <- des_top_order(incidence_new, ancest1, child, n)
+        top_name <- des_top_order(incidence_new, ancest1, child)
         for (d in top_name){
           for(g in which(incidence_new[,d]==1)) {
             ancestor_new[d,c(g,(which(ancestor_new[g,]==1)))] <- 1
@@ -743,7 +743,8 @@ return(W)
   
   ################################################################################
   ### assign the topological order of the descendants of the child
-  des_top_order <- function(incidence, ancest1,child,n){
+  des_top_order <- function(incidence, ancest1,child){
+    n = nrow(incidence)
     top <- top_order(incidence)
     position_child <- which(top==child)
     top_all_after <- top[position_child:n]                # top. order without the "first" nodes

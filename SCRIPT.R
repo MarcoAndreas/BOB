@@ -151,7 +151,7 @@ data_mixed = rbind(data_con[1,],data_dis[2:3,])
 
 # and we define an indicator vector that indicates the ordinal variables
 
-INDICATOR_VEC = c(1,1,1)
+INDICATOR_VEC = c(0,1,1)
 
 # Which variables are ordinal?
 # which(INDICATOR_VECTOR)

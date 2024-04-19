@@ -744,14 +744,13 @@ return(W)
   ################################################################################
   ### assign the topological order of the descendants of the child
   des_top_order <- function(incidence, ancest1,child){
-    n = nrow(incidence)
     top <- top_order(incidence)
     position_child <- which(top==child)
     top_all_after <- top[position_child:n]                # top. order without the "first" nodes
     desc <- which(ancest1[,child]==1)                     # descendants of the child
     inter_step <- c(child,desc,top_all_after)
     des_top <- inter_step[which(duplicated(inter_step))]
-    return()
+    return(des_top)
   }
   
   

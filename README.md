@@ -6,7 +6,7 @@ This GitHub repository contains R code that accompanies the paper:
 
 `Being Bayesian about learning Bayesian networks from ordinal data'
 
-submitted to the International Journal of Approximate Reasoning (in February 2024)
+to appear in the International Journal of Approximate Reasoning (accepted 19 April 2024)
 
 author: Marco Grzegorczyk
 
@@ -15,3 +15,7 @@ affiliation: Groningen University, Netherlands
 email: m.a.grzegorczyk@rug.nl
 
 The R command lines in the file SCRIPT.R can be executed line-wise.
+
+
+
+MORE R CODES MIGHT BE MADE AVAILABLE SOON (19 April 2024)

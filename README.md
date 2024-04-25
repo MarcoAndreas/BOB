@@ -16,6 +16,8 @@ email: m.a.grzegorczyk@rug.nl
 
 The R command lines in the file SCRIPT.R can be executed line-wise.
 
+#############################################################
 
+There is also some advanced code available.
 
-MORE R CODES MIGHT BE MADE AVAILABLE SOON (19 April 2024)
+The R command lines in the file ADVANCED_SCRIPT.R can also be executed line-wise.
